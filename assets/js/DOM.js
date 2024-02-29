@@ -4,11 +4,9 @@
 
 // 1
 const input = document.getElementById("input");
-input.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        const result = document.querySelector(".wrapper p");
-        result.innerHTML = `${input.value}`;
-    }
+input.addEventListener("input", (e) => {
+    const result = document.querySelector(".wrapper p");
+    result.innerHTML = `${input.value}`;
 });
 
 // 2
@@ -20,11 +18,27 @@ valueChange.addEventListener("change", (e) => {
 
 // 3
 document.addEventListener("keydown", (e) => {
-    document.querySelector(
-        ".infoKey p:first-child > span"
-    ).innerHTML = `${e.key}`;
+    if (e.key === " ") {
+        document.querySelector(
+            ".infoKey p:first-child > span"
+        ).innerHTML = `Space`;
+    } else {
+        document.querySelector(
+            ".infoKey p:first-child > span"
+        ).innerHTML = `${e.key}`;
+    }
 
     document.querySelector(
-        ".infoKey p:last-child > span"
+        ".infoKey p:nth-child(2) > span"
     ).innerHTML = `${e.which}`;
+
+    if (e.which === 17) {
+        document.querySelector(
+            ".infoKey p:last-child > span"
+        ).innerHTML = `true`;
+    } else {
+        document.querySelector(
+            ".infoKey p:last-child > span"
+        ).innerHTML = `false`;
+    }
 });
