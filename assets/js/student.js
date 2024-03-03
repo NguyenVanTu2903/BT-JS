@@ -1,6 +1,34 @@
-localStorage.setItem("info", JSON.stringify([]));
+localStorage.setItem(
+    "info",
+    JSON.stringify([
+        {
+            id: 1,
+            name: "Nguyen Van A",
+            age: 23,
+            phone: 123,
+            className: "FE",
+            status: "learning",
+        },
+        {
+            id: 2,
+            name: "Nguyen Van B",
+            age: 23,
+            phone: 456,
+            className: "FE",
+            status: "learning",
+        },
+        {
+            id: 3,
+            name: "Nguyen Van C",
+            age: 23,
+            phone: 789,
+            className: "FE",
+            status: "learning",
+        },
+    ])
+);
 let info = getInfo("info");
-
+console.table(info);
 const menu = `
 1 Thêm sinh viên
 2 Sửa sinh viên
